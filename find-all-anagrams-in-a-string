@@ -1,0 +1,25 @@
+class Solution {
+    public List<Integer> findAnagrams(String s, String p) {
+
+        List<Integer> list = new ArrayList<Integer>();
+        int length = p.length();
+        
+        p = new String(find(p.toCharArray()));
+        
+        for(int i=0;i<s.length() - length + 1;i++){
+            
+            String ifexists = new String(find(s.substring(i,i + length).toCharArray()));
+            
+            if(ifexists.equals(p))
+                list.add(i);  
+        } 
+        return list;
+    }
+    
+    public char[] find(char[] arr){
+        
+        Arrays.sort(arr);
+        
+        return arr;
+    } 
+}
